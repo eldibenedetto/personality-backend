@@ -15,21 +15,33 @@ ActiveRecord::Schema.define(version: 20171019183213) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "insights", force: :cascade do |t|
+    t.text "writing_sample"
+    t.text "insightJSON"
+    t.integer "openness"
+    t.integer "agreeableness"
+    t.integer "conscientiousness"
+    t.integer "introversion_extraversion"
+    t.integer "emotional_range"
+  end
+
   create_table "people", force: :cascade do |t|
     t.string "name"
-    t.text "writing_sample"
-    t.text "insight"
+    t.integer "insight_id"
+  end
+
+  create_table "user_people", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "person_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "username"
-    t.string "password_digest"
-    t.text "writing_sample"
     t.integer "age"
     t.integer "gender"
-    t.text "insights"
+    t.string "username"
+    t.string "password_digest"
+    t.integer "insight_id"
   end
 
 end

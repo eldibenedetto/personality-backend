@@ -1,7 +1,11 @@
 class User < ActiveRecord::Base
 
-has_many :people
+has_one :insight
+has_many :user_people
+has_many :people, through: :user_people
 
 has_secure_password
+
+enum gender: [:male, :female, :other]
 
 end
