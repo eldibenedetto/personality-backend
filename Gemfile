@@ -18,8 +18,9 @@ gem 'puma', '~> 3.7'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-
+gem 'rest-client', '~> 1.8'
 gem 'jwt'
+gem 'excon', '~> 0.54.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
