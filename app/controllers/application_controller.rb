@@ -24,10 +24,7 @@ end
 
 def current_user
   if decoded_token
-    if user_id = decoded_token[0]["user_id"]
-      @user = User.find(user_id)
-    else
-    end
+    @user = User.find(decoded_token[0]["user_id"])
   else
   end
 end

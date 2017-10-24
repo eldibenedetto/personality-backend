@@ -6,7 +6,6 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.integer :gender
       t.string :username
       t.string :password_digest
-      t.integer :insight_id
     end
   end
 end

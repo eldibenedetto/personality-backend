@@ -1,7 +1,5 @@
 class Insight < ActiveRecord::Base
 
-belongs_to :person
-belongs_to :user
-
+belongs_to :insightable, polymorphic: true
 
 end
