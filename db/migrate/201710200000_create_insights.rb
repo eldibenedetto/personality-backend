@@ -8,6 +8,7 @@ class CreateInsights < ActiveRecord::Migration[5.1]
       t.integer :conscientiousness
       t.integer :introversion_extraversion
       t.integer :emotional_range
+      t.references :insightable, polymorphic: true, index: true
     end
   end
 end

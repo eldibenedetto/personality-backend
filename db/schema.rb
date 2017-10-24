@@ -23,11 +23,13 @@ ActiveRecord::Schema.define(version: 20171019183213) do
     t.integer "conscientiousness"
     t.integer "introversion_extraversion"
     t.integer "emotional_range"
+    t.string "insightable_type"
+    t.bigint "insightable_id"
+    t.index ["insightable_type", "insightable_id"], name: "index_insights_on_insightable_type_and_insightable_id"
   end
 
   create_table "people", force: :cascade do |t|
     t.string "name"
-    t.integer "insight_id"
   end
 
   create_table "user_people", force: :cascade do |t|
@@ -41,7 +43,6 @@ ActiveRecord::Schema.define(version: 20171019183213) do
     t.integer "gender"
     t.string "username"
     t.string "password_digest"
-    t.integer "insight_id"
   end
 
 end

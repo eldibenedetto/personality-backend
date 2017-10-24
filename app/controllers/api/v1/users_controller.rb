@@ -11,7 +11,7 @@ class Api::V1::UsersController < ApplicationController
   def create
     user = User.new(user_params)
     if user.save
-      encode_token({user_id: user.id})
+      token = encode_token({user_id: user.id})
       render json: {user: user, token: token}
     else
       render json: { message: "Invalid username or password"}
@@ -24,12 +24,6 @@ class Api::V1::UsersController < ApplicationController
     else
       render json: { message: "No JWT Token"}
     end
-  end
-
-  def update
-    user = User.find(params[:id])
-    user.update(writing_sample: params["writingSample"])
-    render json: user, status: 200
   end
 
   private

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       post '/users', to: "users#create"
       post '/login', to: "auth#create"
       get '/me', to: "users#me"
-      post '/users/:id', to: "users#update"
+      post '/insights', to: "insights#create"
     end
   end
 end
